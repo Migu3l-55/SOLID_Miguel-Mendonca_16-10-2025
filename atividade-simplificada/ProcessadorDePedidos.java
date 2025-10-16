@@ -8,10 +8,7 @@ class ProcessadorDePedidos {
     // Violação do SRP: Esta classe faz tudo
     public void processar(Pedido pedido) {
         // 1. Responsabilidade: Calcular o total
-        double total = 0;
-        for (Item item : pedido.getItens()) {
-            total += item.getPreco();
-        }
+        double total = CalculadorDePreco.calcularPreco(pedido);
         System.out.println("Total do pedido: " + total);
 
         // 2. Responsabilidade: Processar o pagamento
