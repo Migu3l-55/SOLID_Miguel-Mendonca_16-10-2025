@@ -3,7 +3,7 @@
  */
 class ProcessadorDePedidos {
     // Violação do DIP: Depende diretamente da implementação concreta
-    private Repositorio repositorio = new Repositorio(new MySQLRepositorio());
+    private BD repositorio;
 
     // Violação do SRP: Esta classe faz tudo
     public void processar(Pedido pedido) {

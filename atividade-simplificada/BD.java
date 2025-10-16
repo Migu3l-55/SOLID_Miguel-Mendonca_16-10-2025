@@ -1,3 +1,3 @@
 public interface BD {
-    public void adicionarAoBanco(Pedido pedido);
+    public void salvar(Pedido pedido);
 }

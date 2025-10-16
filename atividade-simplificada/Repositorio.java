@@ -6,6 +6,6 @@ public class Repositorio {
     }
 
     public void salvar(Pedido pedido) {
-        bd.adicionarAoBanco(pedido);
+        bd.salvar(pedido);
     }
 }
