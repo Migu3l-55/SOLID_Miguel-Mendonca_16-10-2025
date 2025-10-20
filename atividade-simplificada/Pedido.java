@@ -1,4 +1,6 @@
 // Classe que representa o Pedido
+import tipospagamento.*;
+
 class Pedido {
     private java.util.List<Item> itens = new java.util.ArrayList<>();
     private Pagamento pagamento;
@@ -18,7 +20,7 @@ class Pedido {
 
     public void setPagamento(Pagamento pagamento) {
         this.pagamento = pagamento;
-        setTipoPagamento(pagamento.getTipoPagamento());
+        setTipoPagamento(pagamento.getTipoPagamento()); //define o tipoPagemento automaticamente
     }
 
     public String getTipoPagamento() {
