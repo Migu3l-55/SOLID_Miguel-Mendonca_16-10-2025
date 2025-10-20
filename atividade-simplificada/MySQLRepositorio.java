@@ -1,4 +1,3 @@
-// Implementação concreta de Repositório (Acoplamento)
 class MySQLRepositorio implements BD {
     @Override
     public void salvar(Pedido pedido) {
