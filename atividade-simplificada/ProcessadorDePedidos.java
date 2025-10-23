@@ -1,14 +1,6 @@
- import tipospagamento.*; //isso só é necessário pq eu quis colocar todos os tipos de pagamento em uma pasta separada.
-
 class ProcessadorDePedidos {
-    private BD repositorio;
+    private MySQLRepositorio repositorio=new MySQLRepositorio();
     
-    public BD getRepositorio() {
-        return this.repositorio;
-    }
-    public void setRepositorio(BD repositorio) {
-        this.repositorio = repositorio;
-    }
     /* adicionei esses setters e getters pq estava dando o seguinte erro na classe ECommerce.java:
         Exception in thread "main" java.lang.NullPointerException: Cannot invoke "BD.salvar(Pedido)" because "this.repositorio" is null
         at ProcessadorDePedidos.processar(ProcessadorDePedidos.java:16)
@@ -19,7 +11,7 @@ class ProcessadorDePedidos {
         double total = CalculadorDePreco.calcularPreco(pedido);
         System.out.println("\nTotal do pedido: " + total);
         
-        ProcessadorDePagamentos.processarPagamento(pedido);
+        ProcessadorDePagamentos.processarPagamento(pedido, new PagamentoViaCartao());
         
         repositorio.salvar(pedido); //eu acho que essa respnsabilidade pode ficar aqui
         
